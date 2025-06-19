@@ -41,7 +41,7 @@ app.post('/api/upload', upload.single('image'), (req, res) => {
     if (!req.file) {
         return res.status(400).json({ error: 'No file uploaded' });
     }
-    const url = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
+    const url = `http://192.168.4.107:5000/uploads/${req.file.filename}`;
     res.json({ url });
 });
 
@@ -147,6 +147,7 @@ app.post('/api/login', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on http://192.168.4.107:${PORT}`);
 });
+

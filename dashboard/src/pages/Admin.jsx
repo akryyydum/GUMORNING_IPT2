@@ -17,7 +17,7 @@ import {
 import { PlusOutlined, UploadOutlined, EditOutlined, DeleteOutlined, UserOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'http://192.168.4.107:5000/api';
 
 const fetchMenuItems = async () => {
   const res = await fetch(`${API_URL}/menu`);
